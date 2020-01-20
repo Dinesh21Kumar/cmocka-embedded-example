@@ -32,10 +32,10 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o : %.c
 	@echo $< 
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -std=c99 $(CFLAGS) -c $< -o $@
 
 $(TARGET):  $(SRC_OBJ) $(TEST_OBJ)
-	$(CC) -o $@ $^ $(LDFLAGS)
+	$(CC) -std=c99 -o $@ $^ $(LDFLAGS)
 
 $(CMOCKA_DIR):
 	mkdir -p $@
