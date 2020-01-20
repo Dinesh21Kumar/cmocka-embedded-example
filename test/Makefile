@@ -12,8 +12,8 @@ LDFLAGS += -lcmocka
 
 TARGET = test_tmp101
 
-SRC = i2c.c tmp101.c
-TEST_SRC = mock_i2c.c test_tmp101.c
+SRC = i2c.c tmp101.c basics.c
+TEST_SRC = mock_i2c.c test_tmp101.c 
 
 SRC_OBJ = $(patsubst %.c,obj/%.o,$(SRC)) 
 TEST_OBJ = $(patsubst %.c,obj/%.o,$(TEST_SRC)) 

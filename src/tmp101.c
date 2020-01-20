@@ -24,3 +24,7 @@ float tmp101_get_temperature(void)
     // shift the sample back down and convert by the TMP_101 bit resolution
     return ((temperature / 16) * 0.0625f);
 }
+
+int sum(int a, int b) {
+    return a + b;
+}

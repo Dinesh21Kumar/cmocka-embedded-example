@@ -5,6 +5,7 @@
 #include <cmocka.h>
 
 #include "tmp101.h"
+#include "../src/basics.h"
 
 static void check_i2c_transmit(void)
 {
@@ -52,13 +53,24 @@ static void test_fractional_temperature(void **state)
     assert_true(tmp101_get_temperature() == 0.25);
 }
 
+static void test_sum(void **state) {
+    assert_int_equal(sum(1,2),3);
+}
+
+static void test_printint(void **state) {
+    assert_int_equal(printInt(1),1);
+}
 int main(void)
 {
 	const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_positive_temperature),
         cmocka_unit_test(test_negative_temperature),
         cmocka_unit_test(test_zero_temperature),
-        cmocka_unit_test(test_fractional_temperature)
+        cmocka_unit_test(test_fractional_temperature),
+        cmocka_unit_test(test_sum),
+        cmocka_unit_test(test_printint)
+        
+        
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

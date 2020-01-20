@@ -6,4 +6,6 @@
     #define TMP101_ADDRESS 0x48
 
     float tmp101_get_temperature(void);
+    extern int sum(int a, int b);
+
 #endif
